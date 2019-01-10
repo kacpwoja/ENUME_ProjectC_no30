@@ -1,0 +1,11 @@
+%[t, x] = ode45(@dx, [0 20], [10; 0]);
+close all;
+[t, x, e, h] = RK4variable(@dx, [0, 20], [10; 0], 1, 1e-8, 1e-8, 1e-8);
+figure(1);
+plot(t, x);
+figure(2);
+plot(x(1, :),x(2, :));
+figure(3);
+plot(t, e);
+figure(4);
+plot(t, h);
